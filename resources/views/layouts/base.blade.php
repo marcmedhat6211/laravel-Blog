@@ -13,6 +13,7 @@
         body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
+        background-color: lightblue;
         }
 
         .topnav {
@@ -48,9 +49,8 @@
 <body>
     
     <div class="topnav" id="myTopnav">
-        <!-- <a href="#user" class="active">User</a> -->
-        <a href="#login">Home</a>
-        <!-- <a href="{% url 'adduser' %}">Register</a> -->
+        <a href="{{route('posts.index')}}">Home</a>
+        <a href="{{route('posts.create')}}">Add post</a>
             <i class="fa fa-bars"></i>
         </a>
     </div>

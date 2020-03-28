@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -25,5 +26,24 @@ class PostController extends Controller
         return view('show',[
             'post' => $post,
         ]);
+    }
+
+    public function create()
+    {
+        $users = User::all();
+        return view('create',[
+            'users' => $users
+        ]);
+    }
+
+    public function store(StorePostRequest $request)
+    {
+        Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'user_id' => $request->user_id,
+        ]);
+
+        return redirect()->route('index');
     }
 }
