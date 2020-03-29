@@ -1,6 +1,5 @@
 @extends('layouts.base')
 @section('content')
-<!-- <button type="button" class="btn btn-success">Add post</button> -->
 <h1 class="text-center mb-3">Posts</h1>
 	@if($posts)
         @foreach($posts as $post)

@@ -21,7 +21,6 @@ class PostController extends Controller
     {
         $request = request();
         $postId = $request->post;
-        // dd($postId);
         $post = Post::find($postId);
         return view('show',[
             'post' => $post,
@@ -49,11 +48,6 @@ class PostController extends Controller
 
     public function destroy($postId)
     {   
-        // $request = request();
-        // $postId = $request->post;
-        // $deleted = Post::delete($postId);
-        // return redirect()->route('index')->with(['message'=>'successfully deleted!']);
-
         $post = Post::where('id',$postId);
         $post->delete();
         return redirect()->route('index')->with(['message'=>'successfully deleted!']);
