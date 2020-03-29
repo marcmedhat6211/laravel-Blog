@@ -25,6 +25,9 @@ Route::get('/posts','PostController@index')->name('posts.index');
 
 Route::get('/posts/create','PostController@create')->name('posts.create');
 
-Route::post('/posts','PostController@create')->name('posts.store');
+Route::post('/posts','PostController@store')->name('posts.store');
+
+Route::delete('/posts/{postId}','PostController@destroy')->name('posts.destroy');
 
 Route::get('/posts/{post}','PostController@show')->name('posts.show');
+

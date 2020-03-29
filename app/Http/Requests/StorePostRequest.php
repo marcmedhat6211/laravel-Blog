@@ -25,17 +25,17 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3',
-            'description' => 'required|min:3'
+            'description' => 'required|min:3',
         ];
     }
 
-    public function message()
+    public function messages()
     {
         return[
             'title.min' => 'title field should have 3 or more characters',
             'title.required' => 'title field is required',
             'description.min' => 'description field should have 3 or more characters',
-            'description.required' => 'description field is required',
+            'description.required' => 'description field is required'
         ];
     }
 }
